@@ -1,0 +1,24 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Tooling
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp
+
+# Project specific
+uploads/*
+!uploads/.gitkeep
+
+# Logs and temp files
+*.log
+*.err
+error_log
