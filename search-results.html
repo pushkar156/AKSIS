@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - AKSIS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.png">
+    <style>
+        .search-results-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 5%;
+        }
+        
+        .search-header {
+            margin-bottom: 2rem;
+        }
+        
+        .search-header h1 {
+            color: #334897;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .search-query {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .search-query strong {
+            color: #334897;
+        }
+        
+        .results-count {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        
+        .search-results {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .result-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(51,72,151,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .result-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(51,72,151,0.12);
+        }
+        
+        .result-title {
+            color: #334897;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .result-title:hover {
+            color: #1a2b6b;
+        }
+        
+        .result-url {
+            color: #28a745;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-family: monospace;
+        }
+        
+        .result-snippet {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-category {
+            display: inline-block;
+            background: #e8f2ff;
+            color: #334897;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #666;
+        }
+        
+        .no-results h3 {
+            color: #334897;
+            margin-bottom: 1rem;
+        }
+        
+        .suggestions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #334897;
+        }
+        
+        .suggestions h4 {
+            color: #334897;
+            margin-bottom: 1rem;
+        }
+        
+        .suggestion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .suggestion-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .suggestion-list a {
+            color: #334897;
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            background: #fff;
+            border-radius: 20px;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        
+        .suggestion-list a:hover {
+            background: #e8f2ff;
+        }
+        
+        .search-highlight {
+            background: #fff3cd;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .search-results-container {
+                margin: 100px auto 40px;
+                padding: 0 1rem;
+            }
+            
+            .search-header h1 {
+                font-size: 2rem;
+            }
+            
+            .result-item {
+                padding: 1.2rem;
+            }
+            
+            .result-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-overlay"><div class="loader-spinner"></div></div>
+    <div class="fadein-main">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="https://aksisss.com"><img src="assets/logo.png" alt="AKSIS Logo"></a>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <div class="dropdown keys-dropdown">
+                        <a href="#keys" class="nav-anim-link">Keys<span class="dropdown-arrow"></span></a>
+                        <div class="dropdown-content">
+                            <a href="keys_machinery.html" class="dropdown-item">Machinery Equipment</a>
+                            <a href="keys_consultancy.html" class="dropdown-item">Consultancy And Technology</a>
+                            <a href="keys_raw-material.html" class="dropdown-item">Raw Material</a>
+                            <a href="keys_software.html" class="dropdown-item">Software Technology</a>
+                            <a href="keys_packaged-food.html" class="dropdown-item">Packaged Food</a>
+                            <a href="keys_spare-parts.html" class="dropdown-item">Spare Parts</a>
+                            <a href="keys_assembly.html" class="dropdown-item">Assembly</a>
+                            <a href="keys_re-refining.html" class="dropdown-item">Re-Refining</a>
+                        </div>
+                    </div>
+                    <div class="dropdown keys-dropdown">
+                        <a href="#expertise" class="nav-anim-link">Expertise<span class="dropdown-arrow"></span></a>
+                        <div class="dropdown-content">
+                            <a href="expertise_processing.html" class="dropdown-item">Processing</a>
+                            <a href="expertise_manufacturing.html" class="dropdown-item">Manufacturing</a>
+                            <a href="expertise_material-handling.html" class="dropdown-item">Material Handling</a>
+                            <a href="expertise_packaging.html" class="dropdown-item">Packaging</a>
+                            <a href="expertise_spare-services.html" class="dropdown-item">Spare & Services</a>
+                            <a href="expertise_furniture.html" class="dropdown-item">Furniture</a>
+                        </div>
+                    </div>
+                    <div class="dropdown keys-dropdown">
+                        <a href="#about" class="nav-anim-link">About<span class="dropdown-arrow"></span></a>
+                        <div class="dropdown-content">
+                            <a href="about_about.html" class="dropdown-item">About</a>
+                            <a href="about_careers.html" class="dropdown-item">Careers</a>
+                        </div>
+                    </div>
+                    <a href="resources.html" class="nav-anim-link">Resources</a>
+                    <a href="case-studies.html" class="nav-anim-link">Case Studies</a>
+                    <a href="contact.html" class="nav-anim-link">Contact</a>
+                </nav>
+                <form class="navbar-search" action="search-results.html" method="get">
+                    <span class="navbar-search-icon">
+                        <img src="assets/search.svg" alt="Search" />
+                    </span>
+                    <input type="text" placeholder="Search for products..." name="q" />
+                </form>
+                <!-- Hamburger Menu -->
+                <button class="hamburger" id="hamburgerBtn" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="menu-content">
+                <button class="close-btn" id="closeMenuBtn" type="button"></button>
+                <div class="menu-section">
+                    <button class="menu-item has-submenu" id="keysMenuBtn" type="button">
+                        Keys
+                    </button>
+                    <div id="keys-submenu" class="submenu">
+                        <a href="keys_machinery.html" class="submenu-item">Machinery Equipment</a>
+                        <a href="keys_consultancy.html" class="submenu-item">Consultancy And Technology</a>
+                        <a href="keys_raw-material.html" class="submenu-item">Raw Material</a>
+                        <a href="keys_software.html" class="submenu-item">Software Technology</a>
+                        <a href="keys_packaged-food.html" class="submenu-item">Packaged Food</a>
+                        <a href="keys_spare-parts.html" class="submenu-item">Spare Parts</a>
+                        <a href="keys_assembly.html" class="submenu-item">Assembly</a>
+                        <a href="keys_re-refining.html" class="submenu-item">Re-Refining</a>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <button class="menu-item has-submenu" id="expertiseMenuBtn" type="button">
+                        Expertise
+                    </button>
+                    <div id="expertise-submenu" class="submenu">
+                        <a href="expertise_processing.html" class="submenu-item">Processing</a>
+                        <a href="expertise_manufacturing.html" class="submenu-item">Manufacturing</a>
+                        <a href="expertise_material-handling.html" class="submenu-item">Material Handling</a>
+                        <a href="expertise_packaging.html" class="submenu-item">Packaging</a>
+                        <a href="expertise_spare-services.html" class="submenu-item">Spare & Services</a>
+                        <a href="expertise_furniture.html" class="submenu-item">Furniture</a>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <button class="menu-item has-submenu" id="aboutMenuBtn" type="button">
+                        About
+                    </button>
+                    <div id="about-submenu" class="submenu">
+                        <a href="about_about.html" class="submenu-item">About</a>
+                        <a href="about_careers.html" class="submenu-item">Careers</a>
+                    </div>
+                </div>
+                <div class="menu-section">
+                    <a href="resources.html" class="menu-item">Resources</a>
+                </div>
+                <div class="menu-section">
+                    <a href="case-studies.html" class="menu-item">Case Studies</a>
+                </div>
+                <div class="menu-section">
+                    <a href="contact.html" class="menu-item">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <main class="search-results-container">
+            <div class="search-header">
+                <h1>Search Results</h1>
+                <div class="search-query">
+                    Results for: <strong id="searchQuery"></strong>
+                </div>
+            </div>
+            
+            <div class="results-count">
+                <span id="resultsCount">0</span> results found
+            </div>
+            
+            <div class="search-results" id="searchResults">
+                <!-- Search results will be populated here -->
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>We couldn't find any content matching your search.</p>
+                <div class="suggestions">
+                    <h4>Try searching for:</h4>
+                    <ul class="suggestion-list">
+                        <li><a href="search-results.html?q=machinery">Machinery</a></li>
+                        <li><a href="search-results.html?q=packaging">Packaging</a></li>
+                        <li><a href="search-results.html?q=processing">Processing</a></li>
+                        <li><a href="search-results.html?q=consultancy">Consultancy</a></li>
+                        <li><a href="search-results.html?q=careers">Careers</a></li>
+                        <li><a href="search-results.html?q=contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html> 

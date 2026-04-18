@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us | AKSIS</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" /><style>
+        /* Hero section background */
+        .hero {
+            background-image: url('assets/lines.svg'), linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background-repeat: no-repeat, no-repeat;
+            background-size: cover, 100% 100%;
+            background-position: center, center;
+        }
+        @media (max-width: 700px) {
+          .hero {
+            background-position: center, center;
+            background-size: cover, 100% 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-overlay"><div class="loader-spinner"></div></div>
+    <div class="fadein-main">
+    <<header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="AKSIS Logo"></a>
+            </div>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <div class="dropdown keys-dropdown">
+                    <a href="#keys" class="nav-anim-link">Keys<span class="dropdown-arrow"></span></a>
+                    <div class="dropdown-content">
+                        <a href="keys_machinery.html" class="dropdown-item">Machinery Equipment</a>
+                        <a href="keys_consultancy.html" class="dropdown-item">Consultancy And Technology</a>
+                        <a href="keys_raw-material.html" class="dropdown-item">Raw Material</a>
+                        <a href="keys_software.html" class="dropdown-item">Software Technology</a>
+                        <a href="keys_packaged-food.html" class="dropdown-item">Packaged Food</a>
+                        <a href="keys_spare-parts.html" class="dropdown-item">Spare Parts</a>
+                        <a href="keys_assembly.html" class="dropdown-item">Assembly</a>
+                        <a href="keys_re-refining.html" class="dropdown-item">Re-Refining</a>
+                    </div>
+                </div>
+                <div class="dropdown keys-dropdown">
+                    <a href="#expertise" class="nav-anim-link">Expertise<span class="dropdown-arrow"></span></a>
+                    <div class="dropdown-content">
+                        <a href="expertise_processing.html" class="dropdown-item">Processing</a>
+                        <a href="expertise_manufacturing.html" class="dropdown-item">Manufacturing</a>
+                        <a href="expertise_material-handling.html" class="dropdown-item">Material Handling</a>
+                        <a href="expertise_packaging.html" class="dropdown-item">Packaging</a>
+                        <a href="expertise_spare-services.html" class="dropdown-item">Spare & Services</a>
+                        <a href="expertise_furniture.html" class="dropdown-item">Furniture</a>
+                    </div>
+                </div>
+                <div class="dropdown keys-dropdown">
+                    <a href="#about" class="nav-anim-link">About<span class="dropdown-arrow"></span></a>
+                    <div class="dropdown-content">
+                        <a href="about_about.html" class="dropdown-item">About</a>
+                        <a href="about_careers.html" class="dropdown-item">Careers</a>
+                    </div>
+                </div>
+                <a href="resources.html" class="nav-anim-link">Resources</a>
+                <a href="case-studies.html" class="nav-anim-link">Case Studies</a>
+                <a href="contact.html" class="nav-anim-link">Contact</a>
+            </nav>
+            <form class="navbar-search" action="search-results.html" method="get">
+                <span class="navbar-search-icon">
+                    <img src="assets/search.svg" alt="Search" />
+                </span>
+                <input type="text" placeholder="Search for products..." name="q" />
+            </form>
+            <!-- Hamburger Menu -->
+            <button class="hamburger" id="hamburgerBtn" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-content">
+            <button class="close-btn" id="closeMenuBtn" type="button"></button>
+            <div class="menu-section">
+                <button class="menu-item has-submenu" id="keysMenuBtn" type="button">
+                    Keys
+                </button>
+                <div id="keys-submenu" class="submenu">
+                    <a href="keys_machinery.html" class="submenu-item">Machinery Equipment</a>
+                    <a href="keys_consultancy.html" class="submenu-item">Consultancy And Technology</a>
+                    <a href="keys_raw-material.html" class="submenu-item">Raw Material</a>
+                    <a href="keys_software.html" class="submenu-item">Software Technology</a>
+                    <a href="keys_packaged-food.html" class="submenu-item">Packaged Food</a>
+                    <a href="keys_spare-parts.html" class="submenu-item">Spare Parts</a>
+                    <a href="keys_assembly.html" class="submenu-item">Assembly</a>
+                    <a href="keys_re-refining.html" class="submenu-item">Re-Refining</a>
+                </div>
+            </div>
+            <div class="menu-section">
+                <button class="menu-item has-submenu" id="expertiseMenuBtn" type="button">
+                    Expertise
+                </button>
+                <div id="expertise-submenu" class="submenu">
+                    <a href="expertise_processing.html" class="submenu-item">Processing</a>
+                    <a href="expertise_manufacturing.html" class="submenu-item">Manufacturing</a>
+                    <a href="expertise_material-handling.html" class="submenu-item">Material Handling</a>
+                    <a href="expertise_packaging.html" class="submenu-item">Packaging</a>
+                    <a href="expertise_spare-services.html" class="submenu-item">Spare & Services</a>
+                    <a href="expertise_furniture.html" class="submenu-item">Furniture</a>
+                </div>
+            </div>
+            <div class="menu-section">
+                <button class="menu-item has-submenu" id="aboutMenuBtn" type="button">
+                    About
+                </button>
+                <div id="about-submenu" class="submenu">
+                    <a href="about_about.html" class="submenu-item">About</a>
+                    <a href="about_careers.html" class="submenu-item">Careers</a>
+                </div>
+            </div>
+            <div class="menu-section">
+                <a href="resources.html" class="menu-item">Resources</a>
+            </div>
+            <div class="menu-section">
+                <a href="case-studies.html" class="menu-item">Case Studies</a>
+            </div>
+            <div class="menu-section">
+                <a href="contact.html" class="menu-item">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <main class="contact-main">
+        <section class="hero scroll-reveal">
+            
+            <div class="hero-bg-image"></div>
+            <div class="hero-content">
+                <h1>
+                    <span class="highlight">CONNECT WITH AKSIS</span>
+                </h1>
+                <h2 class="contact-hero-subheading">Fill out the form below to speak with an engineer.</h2>
+                <div class="contact-info-block contact-info-mobile-bg">
+                    <h3>Contact Us</h3>
+                    <address>
+                    <ul>
+                            <li>
+                                <span class="contact-icon" aria-hidden="true"><i class="fas fa-phone" style="color:#334897;font-size:1.2em;"></i></span>
+                                <a href="tel:+919833452563">+91-98334 52563</a>
+                            </li>
+                            <li>
+                                <span class="contact-icon" aria-hidden="true"><i class="fas fa-location-dot" style="color:#334897;font-size:1.2em;"></i></span>
+                                <span>Kapil Ratna Apartments, 3rd Floor, Cadel Road, Opp. State Bank of India, Veer Savarkar Marg, Dadar, Mumbai-400028</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon" aria-hidden="true"><i class="fas fa-envelope" style="color:#334897;font-size:1.2em;"></i></span>
+                                <a href="mailto:aksisindustrialtechnologies@gmail.com">aksisindustrialtechnologies@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="contact-icon" aria-hidden="true"><i class="fas fa-envelope" style="color:#334897;font-size:1.2em;"></i></span>
+                                <a href="mailto:kalpeshreshamwala@yahoo.com">kalpeshreshamwala@yahoo.com</a>
+                            </li>
+                    </ul>
+                    </address>
+                </div>
+            </div>
+        </section>
+        <section class="contact-form-section scroll-reveal">
+            <div class="contact-form-heading-block">
+                <h2>ENQUIRY FORM</h2>
+                <p>Please fill in the below enquiry form to send us your enquiries.<br>Fields marked with (<span class="required">*</span>) are mandatory.</p>
+            </div>
+            <form class="contact-form" id="enquiryForm" action="contact-handler.php" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="companyName">Company Name <span class="required">*</span></label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Enter your company's name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Contact Name <span class="required">*</span></label>
+                        <input type="text" id="contactName" name="contactName" required placeholder="Enter your name of contact">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address">Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" required placeholder="Enter your address">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="contactNumber" name="contactNumber" required placeholder="Enter your number of contact">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your Email Id">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Country <span class="required">*</span></label>
+                        <div class="custom-dropdown" id="country-dropdown" tabindex="0">
+                            <div class="custom-dropdown-selected">Select your Country</div>
+                            <div class="custom-dropdown-list"></div>
+                            <input type="hidden" id="country" name="country" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <div class="custom-dropdown" id="state-dropdown" tabindex="0">
+                            <div class="custom-dropdown-selected">Select your State/Region</div>
+                            <div class="custom-dropdown-list"></div>
+                            <input type="hidden" id="state" name="state" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="industry">Industry <span class="required">*</span></label>
+                        <div class="custom-dropdown" id="industry-dropdown" tabindex="0">
+                            <div class="custom-dropdown-selected">Select your Industry</div>
+                            <div class="custom-dropdown-list">
+                                <div class="custom-dropdown-option">Pharma</div>
+                                <div class="custom-dropdown-option">Food</div>
+                                <div class="custom-dropdown-option">Automotive</div>
+                                <div class="custom-dropdown-option">Other</div>
+                            </div>
+                            <input type="hidden" id="industry" name="industry" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicationType">Application Type <span class="required">*</span></label>
+                        <div class="custom-dropdown" id="applicationType-dropdown" tabindex="0">
+                            <div class="custom-dropdown-selected">Select Application Type</div>
+                            <div class="custom-dropdown-list">
+                                <div class="custom-dropdown-option">Automation</div>
+                                <div class="custom-dropdown-option">Packaging</div>
+                                <div class="custom-dropdown-option">Processing</div>
+                                <div class="custom-dropdown-option">Other</div>
+                            </div>
+                            <input type="hidden" id="applicationType" name="applicationType" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="uploadDocument">Upload a Document</label>
+                        <input type="file" id="uploadDocument" name="uploadDocument" placeholder="Upload your document">
+                    </div>
+                    <div class="form-group">
+                        <label for="enquiryDetails">Details Of Enquiry <span class="required">*</span></label>
+                        <input type="date" id="enquiryDetails" name="enquiryDetails" required placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group checkbox-group custom-upload-row">
+                        <label>Upload a Document?</label>
+                        <div class="custom-upload-options">
+                            <label class="custom-upload-label"><input type="radio" class="custom-upload-radio" name="uploadChoice" value="Yes"> <span>Yes</span></label>
+                            <label class="custom-upload-label"><input type="radio" class="custom-upload-radio" name="uploadChoice" value="No" checked> <span>No</span></label>
+                        </div>
+                    </div>
+                </div>
+                <p class="form-note">By submitting this form, you agree to receive occasional marketing communications from AKSIS Systems. You can unsubscribe anytime via the link in our emails. Your information is managed per our Privacy Policy.</p>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+       
+    </main>
+    <footer class="site-footer custom-footer scroll-reveal">
+        <!-- Mobile-only logo at the top of the footer -->
+        <div class="footer-mobile-logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="AKSIS Logo" style="width: 60px; display: block;" />
+            </a>
+        </div>
+        <div class="footer-svg-bg-absolute">
+            <img src="assets/footer.svg" alt="Footer Visual" class="footer-svg-img">
+            <div class="footer-logo-on-svg">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="AKSIS Logo">
+                </a>
+            </div>
+        </div>
+        <div class="footer-main-row">
+            <div class="footer-left-visual"></div>
+            <div class="footer-right-content">
+                <div class="footer-top-row">
+                    <!-- Group 1: Keys + Expertise -->
+                    <div class="footer-row-pair">
+                        <div class="footer-col">
+                            <h3>Keys</h3>
+                            <ul>
+                                <li><a href="keys_machinery.html"">Machinery Equipment</a></li>                        
+                                <li><a href=" keys_consultancy.html">Consultancy And Technology</a></li>
+                                <li><a href="keys_raw-material.html">Raw Material</a></li>
+                                <li><a href="keys_software.html">Software Technology</a></li>
+                                <li><a href="keys_packaged-food.html">Packaged Food</a></li>
+                                <li><a href="keys_spare-parts.html">Spare Parts</a></li>
+                                <li><a href="keys_assembly.html">Assembly</a></li>
+                                <li><a href="keys_re-refining.html">Re-Refining</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Expertise</h3>
+                            <ul>
+                                <li><a href="expertise_processing.html">Processing</a></li>
+                                <li><a href="expertise_manufacturing.html">Manufacturing</a></li>
+                                <li><a href="expertise_material-handling.html" >Material Handling</a></li>
+                                <li><a href="expertise_packaging.html" >Packaging</a></li>
+                                <li><a href="expertise_spare-services.html">Spare & Services</a></li>
+                                <li><a href="expertise_furniture.html">Furniture</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Group 2: About + Case Studies -->
+                    <div class="footer-row-pair">
+                        <div class="footer-col">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="about_about.html">About Us</a></li>
+                                <li><a href="about_careers.html">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Case Studies</h3>
+                            <ul>
+                                <li><a href="resources.html">Resources</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom-row">
+                    <div class="footer-contact-col">
+                        <h3>Contact Us</h3>
+                        <div class="footer-contact-info">
+                            <div class="footer-contact-phone">+91-98334 52563</div>
+                            <div class="footer-contact-address">
+                                Kapil Ratna Apartments, 3rd Floor, Cadel Road, Opp. State Bank of India, Veer
+                                Savarkar Marg, Dadar, Mumbai-400028
+                            </div>
+                        </div>
+                        <div class="footer-social-links">
+                            <a href="#" aria-label="LinkedIn">
+                                <img src="assets/linkedin-svgrepo-com.svg" alt="LinkedIn" height="32"
+                                    width="32">
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <img src="assets/youtube-svgrepo-com.svg" alt="YouTube" height="32" width="32">
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <img src="assets/instagram-1-svgrepo-com.svg" alt="Instagram" height="32"
+                                    width="32">
+                            </a>
+                            <a href="#" aria-label="Gmail">
+                                <img src="assets/gmail-svgrepo-com.svg" alt="Gmail" height="32" width="32">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-map-col">
+                        <div class="footer-map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.9766853427154!2d72.8332507!3d19.020749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf4e23b541b7%3A0x893bcb4d7e2361c2!2sAksis%20Industrial%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1751352926782!5m2!1sen!2sin"
+                                width="100%" height="100%" style="border:0;" allowfullscreen=""
+                                loading="lazy"></iframe>
+                            <a href="https://www.google.com/maps/place/Aksis+Industrial+Technologies+Private+Limited/@19.020749,72.8306758,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7cf4e23b541b7:0x893bcb4d7e2361c2!8m2!3d19.020749!4d72.8332507!16s%2Fg%2F11xmr5cb4g?hl=en-GB&authuser=0&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D."
+                                class="footer-view-map-btn" target="_blank" rel="noopener">View on map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>© Aksis 2025. All Rights Reserved. Powered By Ideapitra</p>
+        </div>
+    </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+    <script src="contact.js"></script>
+    <script>
+    function redirectToThankYou(event) {
+      event.preventDefault();
+      var form = event.target;
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(function(response) {
+        if (response.ok) {
+          alert('Thank you! Your form is submitted.');
+          window.location.href = 'index.html';
+        } else {
+          response.json().then(function(data) {
+            alert(data.error || 'There was a problem submitting your form.');
+          });
+        }
+      }).catch(function(error) {
+        alert('There was a problem submitting your form.');
+      });
+      return false;
+    }
+    </script>
+</body>
+</html> 
